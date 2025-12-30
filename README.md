@@ -1,4 +1,4 @@
-# 🎵 MoodTune AI - Emotion-Powered Music Recommendation
+# 🎵 MoodTune AI - Emotion-Powered Music
 
 <p align="center">
   <img src="https://img.shields.io/badge/Node.js-18.x-green" alt="Node.js">
