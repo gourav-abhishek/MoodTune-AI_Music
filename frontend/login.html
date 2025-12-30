@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodTune AI | Login</title>
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+
+        <!-- Left Panel with Branding -->
+        <div class="left-panel">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fas fa-music-note"></i>
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h1>MoodTune AI</h1>
+                <p class="tagline">Where emotions meet melodies</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>AI-Powered Analysis</h3>
+                        <p>Advanced NLP understands your emotions</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <h3>Mood Detection</h3>
+                        <p>Identify emotions from your text</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-music"></i>
+                    <div>
+                        <h3>Personalized Playlists</h3>
+                        <p>Music that matches your mood</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <p><i class="fas fa-quote-left"></i> Music is the shorthand of emotion <i class="fas fa-quote-right"></i></p>
+                <small>- Leo Tolstoy</small>
+            </div>
+        </div>
+
+        <!-- Right Panel with Login Form -->
+        <div class="right-panel">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Login to continue your musical journey</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <div class="underline"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="password">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <a href="#" class="forgot-password" id="forgotPassword">Forgot Password?</a>
+                        </div>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="underline"></div>
+                    </div>
+                    
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <span>Login</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="social-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="/signup" id="signupLink">Sign up here</a></p>
+                </div>
+                
+                <!-- Loading Spinner -->
+                <div class="spinner-container" id="spinner">
+                    <div class="spinner"></div>
+                    <p>Logging you in...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forgot Password Modal -->
+        <div class="modal" id="forgotPasswordModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Reset Password</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Enter your email address and we'll send you a link to reset your password.</p>
+                    <div class="input-group">
+                        <label for="resetEmail">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input type="email" id="resetEmail" placeholder="you@example.com">
+                        <div class="underline"></div>
+                    </div>
+                    <button class="btn-send">Send Reset Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login_script.js"></script>
+</body>
+</html>

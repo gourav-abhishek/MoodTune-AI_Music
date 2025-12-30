@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodTune AI | Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <h2>Admin Panel</h2>
+            </div>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-upload"></i> Upload Music</a>
+                <a href="#"><i class="fas fa-music"></i> Manage Songs</a>
+                <a href="#"><i class="fas fa-users"></i> Users</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+            </nav>
+        </aside>
+        
+        <main class="main-content">
+            <header>
+                <h1>Upload New Music</h1>
+                <div class="user-info">
+                    <span id="adminName"></span>
+                    <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </header>
+            
+            <div class="upload-form-container">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="title"><i class="fas fa-heading"></i> Song Title *</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="artist"><i class="fas fa-user"></i> Artist *</label>
+                            <input type="text" id="artist" name="artist" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description"><i class="fas fa-align-left"></i> Description</label>
+                        <textarea id="description" name="description" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-tags"></i> Emotion Labels *</label>
+                        <div class="labels-container">
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="labels" value="Fun">
+                                <span class="label-tag fun">Fun</span>
+                            </label>
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="labels" value="Sadness">
+                                <span class="label-tag sadness">Sadness</span>
+                            </label>
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="labels" value="Angry">
+                                <span class="label-tag angry">Angry</span>
+                            </label>
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="labels" value="Love">
+                                <span class="label-tag love">Love</span>
+                            </label>
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="labels" value="General">
+                                <span class="label-tag general">General</span>
+                            </label>
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="labels" value="Motivation">
+                                <span class="label-tag motivation">Motivation</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="duration"><i class="fas fa-clock"></i> Duration (seconds)</label>
+                            <input type="number" id="duration" name="duration" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group file-upload">
+                            <label for="audioFile"><i class="fas fa-file-audio"></i> Audio File *</label>
+                            <div class="upload-area" id="audioUploadArea">
+                                <i class="fas fa-music"></i>
+                                <p>Click to upload audio (MP3, WAV, OGG)</p>
+                                <input type="file" id="audioFile" name="audio" accept="audio/*" required hidden>
+                                <span class="file-name" id="audioFileName">No file chosen</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group file-upload">
+                            <label for="imageFile"><i class="fas fa-image"></i> Cover Image</label>
+                            <div class="upload-area" id="imageUploadArea">
+                                <i class="fas fa-image"></i>
+                                <p>Click to upload image (JPG, PNG)</p>
+                                <input type="file" id="imageFile" name="image" accept="image/*" hidden>
+                                <span class="file-name" id="imageFileName">No file chosen</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="resetBtn">Reset</button>
+                        <button type="submit" id="uploadBtn">
+                            <i class="fas fa-upload"></i> Upload Song
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">Uploading: 0%</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin_script.js"></script>
+</body>
+</html>
